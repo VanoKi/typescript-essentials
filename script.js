@@ -1,2 +1,3 @@
-var message = 'hello, typescript!';
+"use strict";
+let message = 'hello, typescript!';
 console.log(message);
