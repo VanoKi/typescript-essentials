@@ -1,3 +1,4 @@
-"use strict";
-let message = 'hello, typescript!';
-console.log(message);
+function greet(person, date) {
+    console.log("hello, ".concat(person, "! today is ").concat(date.toDateString()));
+}
+greet('John', new Date());

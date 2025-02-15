@@ -1,2 +1,5 @@
-let message: string = 'hello, typescript!';
-console.log(message);
+function greet(person: string, date: Date) {
+    console.log(`hello, ${person}! today is ${date.toDateString()}`);
+}
+
+greet('John', new Date())
