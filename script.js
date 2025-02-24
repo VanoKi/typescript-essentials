@@ -1,9 +1,10 @@
-function repeat(text, count) {
-    var ans = "";
-    for (var i = 0; i < count; i++) {
-        ans += text;
-        // console.log(i);
+function filterAnagrams(word, items) {
+    // let set = new Set(word);
+    // return set;
+    for (var index = 0; index < items.length; index++) {
+        for (var i = 0; i < items[index].length; i++) {
+            
+        }
     }
-    return ans;
 }
-console.log(repeat('wo', 3));
+console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
