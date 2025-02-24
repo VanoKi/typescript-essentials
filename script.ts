@@ -1,6 +1,4 @@
-function getHiddenCard(card: string, last = 4): string {
-    // let arr = Array.from(card)
-    return "*".repeat(last) + card.slice(card.length - 4)
-}
+const numbers = [1, 3, 8, 9, 100, 23, 55, 34];
+const getEvenNumbers = () => numbers.filter((item) => item % 2 == 0)
 
-console.log(getHiddenCard('1234123412344321', 2));
+console.log(getEvenNumbers());
