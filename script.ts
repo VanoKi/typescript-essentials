@@ -1,5 +1,10 @@
-function greet(person: string, date: Date) {
-    console.log(`hello, ${person}! today is ${date.toDateString()}`);
+function filterAnagrams(word: string, items: string[]) {
+    // let set = new Set(word);
+    // return set;
+    for (let index = 0; index < items.length; index++) {
+        console.log(items[index]);
+    }
 }
 
-greet('John', new Date())
+console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+
