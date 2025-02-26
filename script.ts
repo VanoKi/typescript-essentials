@@ -1,12 +1,13 @@
-function filterAnagrams(word: string, items: string[]) {
-    const sorted = (letter: string) => [...letter].sort().join()
-    const mainWord = sorted(word)
-    const ans = []
-    for (let index = 0; index < items.length; index++) {
-        if (mainWord === sorted(items[index])) ans.push(items[index])
-    }
-    return ans
+// Определите тип исходя из структуры объекта
+    const course = {
+        name: 'Java',
+        lessons: ['variables', 'functions', 'conditions'],
+    };
+
+function isComplete(obj: {name: string, lessons: string[]}) {
+    return obj.lessons.length >= 4;
 }
 
-console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
+console.log(isComplete(course))
+// isComplete(course); // false
 
