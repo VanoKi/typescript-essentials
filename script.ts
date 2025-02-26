@@ -1,9 +1,11 @@
 function filterAnagrams(word: string, items: string[]) {
-    // let set = new Set(word);
-    // return set;
+    const sorted = (letter: string) => [...letter].sort().join()
+    const mainWord = sorted(word)
+    const ans = []
     for (let index = 0; index < items.length; index++) {
-        console.log(items[index]);
+        if (mainWord === sorted(items[index])) ans.push(items[index])
     }
+    return ans
 }
 
 console.log(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
