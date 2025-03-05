@@ -1,11 +1,17 @@
 "use strict";
-var ModalStatus;
-(function (ModalStatus) {
-    ModalStatus[ModalStatus["Opened"] = 0] = "Opened";
-    ModalStatus[ModalStatus["Closed"] = 1] = "Closed";
-})(ModalStatus || (ModalStatus = {}));
-const buildModal = (text, status) => {
-    return { text, status };
+const Sasha = {
+    firstName: 'Sasha',
+    age: 22
 };
-const modal = buildModal('hexlet', ModalStatus.Opened);
-console.log(modal);
+const Ivan = {
+    firstName: 'Ivan',
+    age: 65
+};
+const getOlderUser = (user1, user2) => {
+    if (user1.age > user2.age)
+        return user1;
+    if (user1.age < user2.age)
+        return user2;
+    return null;
+};
+console.log(getOlderUser(Sasha, Ivan));
