@@ -1,13 +1,11 @@
-// Определите тип исходя из структуры объекта
-    const course = {
-        name: 'Java',
-        lessons: ['variables', 'functions', 'conditions'],
-    };
-
-function isComplete(obj: {name: string, lessons: string[]}) {
-    return obj.lessons.length >= 4;
+enum ModalStatus {
+    Opened,
+    Closed,
 }
 
-console.log(isComplete(course))
-// isComplete(course); // false
+const buildModal = (text: string, status: ModalStatus) => {
+    return {text, status}
+}
 
+const modal = buildModal('hexlet', ModalStatus.Opened)
+console.log(modal);
