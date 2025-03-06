@@ -1,17 +1,8 @@
-"use strict";
-const Sasha = {
-    firstName: 'Sasha',
-    age: 22
-};
-const Ivan = {
-    firstName: 'Ivan',
-    age: 65
-};
-const getOlderUser = (user1, user2) => {
-    if (user1.age > user2.age)
-        return user1;
-    if (user1.age < user2.age)
-        return user2;
-    return null;
-};
-console.log(getOlderUser(Sasha, Ivan));
+var sentence = 'table cat table dog dog apple table';
+var words = sentence.split(' ');
+var initial = {};
+var result = words.reduce(function (acc, word) {
+    acc[word] = Object.prototype.hasOwn(acc, word) ? acc[word] + 1 : 1;
+    return acc;
+}, initial);
+console.log(result);
