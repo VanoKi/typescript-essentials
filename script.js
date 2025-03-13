@@ -71,3 +71,13 @@ class BlogPost extends Publication {
     }
 
 }
+
+var YDKS = new Book({
+    title: "You Don't Know JS",
+    author: 'Kyle Simpson',
+    publishedOn: 'June 2014',
+    publisher: 'O`Reilly',
+    ISBN: '123456-789'
+})
+
+YDKS.print()
