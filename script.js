@@ -25,3 +25,38 @@ var mathNotes = new Notebook()
 mathNotes.addPage('Arithmetic: + - * / ...')
 mathNotes.addPage('Triganometry: sin cos tan ...')
 mathNotes.print()
+
+class Publication {
+    constructor(title, author, pubDate) {
+        this.title = title
+        this.author = author
+        this.pubDate = pubDate
+    }
+    print () {
+        console.log(`
+        Title: ${this.title})
+        By: ${this.author}
+        ${this.pubDate}
+        `)
+    }
+}
+
+class Book extends Publication{
+    constructor(bookDetails) {
+        super(
+            bookDetails.title,
+            bookDetails.author,
+            bookDetails.publishedOn
+        );
+        this.publisher = bookDetails.publisher
+        this.ISBN = bookDetails.ISBN
+    }
+    print () {
+        super.print()
+        console.log(
+            `Publisher: ${this.publisher}
+            ISBN: ${this.ISBN}`
+        )
+    }
+}
+
