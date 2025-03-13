@@ -1,4 +1,3 @@
-import {helloWorld, helloWorldAgain} from "./hello";
+namespace Company {
 
-helloWorld()
-helloWorldAgain()
+}

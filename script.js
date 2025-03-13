@@ -1,8 +1,27 @@
-var sentence = 'table cat table dog dog apple table';
-var words = sentence.split(' ');
-var initial = {};
-var result = words.reduce(function (acc, word) {
-    acc[word] = Object.prototype.hasOwn(acc, word) ? acc[word] + 1 : 1;
-    return acc;
-}, initial);
-console.log(result);
+class Page {
+    constructor(text) {
+        this.text = text
+    }
+    print () {
+        console.log(this.text)
+    }
+}
+
+class Notebook {
+    constructor() {
+        this.pages = []
+    }
+    addPage(text) {
+        var page = new Page(text)
+        this.pages.push(page)
+    }
+    print () {
+        for (let page of this.pages) {
+            page.print();
+        }
+    }
+}
+var mathNotes = new Notebook()
+mathNotes.addPage('Arithmetic: + - * / ...')
+mathNotes.addPage('Triganometry: sin cos tan ...')
+mathNotes.print()
