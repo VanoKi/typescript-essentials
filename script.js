@@ -60,3 +60,14 @@ class Book extends Publication{
     }
 }
 
+class BlogPost extends Publication {
+    constructor(title, author, pubDate, URL) {
+        super(title, author, pubDate);
+        this.URL = URL;
+    }
+    print() {
+        super.print()
+        console.log(this.URL)
+    }
+
+}
