@@ -1,7 +1,10 @@
-let json = "{ некорректный JSON }";
+let json = '{ "age": 30 }';
 try {
     let user = JSON.parse(json)
-    console.log(user.age)
+    if (!user.name) {
+        throw new SyntaxError('no name')
+    }
+    console.log(user.name)
 } catch (e) {
     console.log(e.name)
     console.log(e.message)
