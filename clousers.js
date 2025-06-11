@@ -1,14 +1,9 @@
-function makeCounter() {
-    let count = 0;
-
-    return function() {
-        return count++; // есть доступ к внешней переменной "count"
-    };
+function satHI() {
+    let name = 'Ivan'
+    return function () {
+        console.log('Hi ' + name)
+    }
 }
 
-let counter = makeCounter();
-
-console.log(counter())
-console.log(counter())
-console.log(counter())
-
+const hi = satHI()
+hi()
