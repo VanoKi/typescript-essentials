@@ -1,10 +1,16 @@
-function outer() {
-    let a = 42;
+function makeCounter(start) {
+    let count = start;
 
-    return function inner() {
-        console.log(a); // inner «носит» переменную a в рюкзаке
+    return function () {
+        count++;
+        console.log(count);
     }
 }
 
-let bag = outer()
-bag()
+const counter1 = makeCounter(0);
+const counter2 = makeCounter(100);
+
+counter1(); // 1
+counter1(); // 2
+
+counter2(); // 101
