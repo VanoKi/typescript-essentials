@@ -12,7 +12,7 @@ function counter() {
     }
 
     function valueOf() {
-        ic(state)
+        console.log(state)
     }
 
     return {
@@ -21,3 +21,9 @@ function counter() {
         valueOf
     }
 }
+
+const TikTok = counter()
+TikTok.increase()
+TikTok.decrease()
+TikTok.valueOf()
+
