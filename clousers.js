@@ -1,16 +1,44 @@
-function makeCounter(start) {
-    let count = start;
-
+function createGreeting(name) {
     return function () {
-        count++;
-        console.log(count);
+        console.log('Hi ' + name)
     }
 }
 
-const counter1 = makeCounter(0);
-const counter2 = makeCounter(100);
+const greetJohn = createGreeting("John");
+greetJohn(); // Привет, John!
+const greetIVan = createGreeting('Ivan')
+greetIVan()
 
-counter1(); // 1
-counter1(); // 2
+function createCounter() {
+    let state = 0
+    function incVal() {
+        console.log(state++)
+    }
+    return incVal
+}
 
-counter2(); // 101
+const counter = createCounter();
+counter(); // 1
+counter(); // 2
+counter(); // 3
+
+function makeFuncs() {
+    let result = [];
+    for (var i = 0; i < 3; i++) {
+        result.push(function() {
+            console.log(i);
+        });
+    }
+    return result;
+}
+
+const funcs = makeFuncs();
+funcs[0](); // ?
+funcs[1](); // ?
+funcs[2](); // ?
+
+const sayOnce = once(() => console.log("Сработало!"));
+
+sayOnce(); // Сработало!
+sayOnce(); // ничего
+sayOnce(); // ничего
