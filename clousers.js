@@ -1,29 +1,14 @@
-import ic from 'node-icecream'
+function makeCounter() {
+    let count = 0;
 
-function counter() {
-    let state = 0
-
-    function increase() {
-        state++
-    }
-
-    function decrease() {
-        state--
-    }
-
-    function valueOf() {
-        console.log(state)
-    }
-
-    return {
-        increase,
-        decrease,
-        valueOf
-    }
+    return function() {
+        return count++; // есть доступ к внешней переменной "count"
+    };
 }
 
-const TikTok = counter()
-TikTok.increase()
-TikTok.decrease()
-TikTok.valueOf()
+let counter = makeCounter();
+
+console.log(counter())
+console.log(counter())
+console.log(counter())
 
