@@ -1,10 +1,12 @@
 import ic from 'node-icecream'
 
-const sayHi = (firstName, secondName) => {
-  const getFullName = () => {
-    return firstName + secondName
+function out() {
+  const a = 42
+  function inn() {
+    console.log(a)
   }
+  inn()
 }
 
-ic('Hello' + getFullName)
-ic('Bye' + getFullName)
+out()
+
