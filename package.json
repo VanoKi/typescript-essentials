@@ -3,6 +3,8 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
+    "node-icecream": "^1.0.0",
     "xhr2": "^0.2.1"
-  }
+  },
+  "type" : "module"
 }

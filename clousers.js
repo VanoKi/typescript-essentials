@@ -1,11 +1,10 @@
-const outherFunc = () => {
-    let x = 10
-    const innerFunc = () => {
-        console.log(x)
-    }
-    return innerFunc
+import ic from 'node-icecream'
+
+const sayHi = (firstName, secondName) => {
+  const getFullName = () => {
+    return firstName + secondName
+  }
 }
 
-const muFunc = outherFunc()
-muFunc()
-
+ic('Hello' + getFullName)
+ic('Bye' + getFullName)
