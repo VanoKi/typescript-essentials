@@ -1,12 +1,23 @@
 import ic from 'node-icecream'
 
-function out() {
-  const a = 42
-  function inn() {
-    console.log(a)
-  }
-  inn()
+function counter() {
+    let state = 0
+
+    function increase() {
+        state++
+    }
+
+    function decrease() {
+        state--
+    }
+
+    function valueOf() {
+        ic(state)
+    }
+
+    return {
+        increase,
+        decrease,
+        valueOf
+    }
 }
-
-out()
-
