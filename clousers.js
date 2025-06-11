@@ -1,17 +1,16 @@
-function createIncrement() {
-    let count = 0
-    function increment() {
-        count++
-    }
-    let message = `count is ${count}`
-    function log() {
-        console.log(message)
-    }
-    return [increment, log]
+function Counter() {
+    let count = 0;
+
+    this.up = function() {
+        return ++count;
+    };
+    this.down = function() {
+        return --count;
+    };
 }
 
-const [increment, log] = createIncrement()
-increment()
-increment()
-increment()
-log()
+let counter = new Counter();
+
+alert( counter.up() ); // ?
+alert( counter.up() ); // ?
+alert( counter.down() ); // ?
