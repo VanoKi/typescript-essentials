@@ -1,9 +1,10 @@
-function satHI() {
-    let name = 'Ivan'
-    return function () {
-        console.log('Hi ' + name)
+function outer() {
+    let a = 42;
+
+    return function inner() {
+        console.log(a); // inner «носит» переменную a в рюкзаке
     }
 }
 
-const hi = satHI()
-hi()
+let bag = outer()
+bag()
