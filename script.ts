@@ -1,16 +1,17 @@
 import {log} from 'console'
 
-const tasks = [
-  { id: 1, title: "Do homework" },
-  { id: 2, title: "Wash dishes" },
-  { id: 3, title: "Read book" }
-];
+const profile = {
+  name: "Sasha",
+  settings: {
+    theme: "light",
+    notifications: true
+  }
+};
 
-type tasksType = typeof tasks
-type taskType = typeof tasks[0]
+type profileType = typeof profile
 
-const removeTask = (tasks:tasksType, id:number):tasksType => {
-  return tasks.filter(task => task.id !== id)
+const updateTheme = (profile:profileType, theme:string):any => {
+  return {...profile, ...profile.settings, theme: 'dark'}
 }
 
-console.log(removeTask(tasks, 2))
+log(updateTheme(profile, 'dark'))
