@@ -11,7 +11,7 @@ const profile = {
 type profileType = typeof profile
 
 const updateTheme = (profile:profileType, theme:string):any => {
-  return {...profile, ...profile.settings, theme: 'dark'}
+  return {...profile, settings: {...profile.settings, theme: 'dark'}}
 }
 
 log(updateTheme(profile, 'dark'))
