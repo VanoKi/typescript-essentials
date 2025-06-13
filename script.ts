@@ -1,15 +1,16 @@
 import {log} from 'console'
 
-const users = [
-  { id: 1, name: "Ivan", isActive: false },
-  { id: 2, name: "Anna", isActive: true }
+const tasks = [
+  { id: 1, title: "Do homework" },
+  { id: 2, title: "Wash dishes" },
+  { id: 3, title: "Read book" }
 ];
 
-type usersType = typeof users
-type userType = typeof users[0]
+type tasksType = typeof tasks
+type taskType = typeof tasks[0]
 
-const activateUser = (users:usersType, id:number):usersType =>{
-  return users.map((user) => user.id === id ? {... user, isActive: true} : user)
+const removeTask = (tasks:tasksType, id:number):tasksType => {
+  return tasks.filter(task => task.id !== id)
 }
 
-log(activateUser(users, 1))
+console.log(removeTask(tasks, 2))
