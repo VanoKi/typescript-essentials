@@ -11,6 +11,6 @@ function Counter() {
 
 let counter = new Counter();
 
-alert( counter.up() ); // ?
-alert( counter.up() ); // ?
-alert( counter.down() ); // ?
+console.log( counter.up() ); // ?
+console.log( counter.up() ); // ?
+console.log( counter.down() ); // ?
