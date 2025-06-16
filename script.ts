@@ -27,6 +27,11 @@ const toggleTaskStatus = (tasks:TaskType[], id:number):TaskType[] => {
   return tasks.map( el => el.id === id ? {...el, isDone: !el.isDone} : el)
 }
 
-log(toggleTaskStatus(tasks, 3))
+const removeTask = (tasks:TaskType[], id: number):TaskType[] => {
+  return tasks.filter(task => task.id !== id)
+}
+
+
+log(removeTask(tasks, 3))
 
 
