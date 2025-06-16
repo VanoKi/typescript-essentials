@@ -41,7 +41,7 @@ const addTask = (
   // ...
   const newTitle =  { id: newTaskId, title: newTaskTitle, isDone: false }
   return todoLists.map(tl => tl.id === todoListId ?
-    {newTitle, ...tl}
+    {...tl, tasks: [newTitle, ...tl.tasks]}
     : tl)
 }
 log(addTask(todoLists, 'todolist-1', 'JS', 3))
