@@ -27,9 +27,11 @@ const removeSubtask = (
   subtaskId: number
 ): TaskType[] => {
   return tasks.map(task => task.id === taskId ?
-    {... task, subtasks: task.subtasks.filter(el => el.id !== subtaskId)} : {...task, subtasks: task.subtasks.filter(el => el)})
+    {... task, subtasks: task.subtasks.filter(el => el.id !== subtaskId)} : task)
 }
 
 
-log(removeSubtask(tasks, 1, 201))
+// log(removeSubtask(tasks, 1, 201))
+let ans = removeSubtask(tasks, 1, 201)
+log(ans[0])
 
