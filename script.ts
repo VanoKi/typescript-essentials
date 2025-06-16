@@ -1,16 +1,35 @@
 import {log} from 'console'
 
 const tasks = [
-  { id: 1, title: "Write code", status: { completed: false } },
-  { id: 2, title: "Eat", status: { completed: false } },
-  { id: 3, title: "Sleep", status: { completed: false } }
+  {
+    id: 1,
+    title: "Project",
+    subtasks: [
+      { id: 101, title: "Setup repo" },
+      { id: 102, title: "Write code" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Lunch",
+    subtasks: [
+      { id: 201, title: "Buy food" },
+      { id: 202, title: "Eat" }
+    ]
+  }
 ];
 
-type TaskType = typeof  tasks[0]
+type TaskType = typeof tasks[0]
 
-const completeTask = (tasks: TaskType[], id: number): TaskType[] => {
-  return tasks.map(task => task.id === id ? {...task, status: {...task.status, completed: true} } : task)}
+const removeSubtask = (
+  tasks: TaskType[],
+  taskId: number,
+  subtaskId: number
+): TaskType[] => {
+  return tasks.map(task => task.id === taskId ?
+    {... task, subtasks: task.subtasks.filter(el => el.id !== subtaskId)} : {...task, subtasks: task.subtasks.filter(el => el)})
+}
 
-log(completeTask(tasks, 1))
 
-// log(tasks[0].status.completed = true)
+log(removeSubtask(tasks, 1, 201))
+
