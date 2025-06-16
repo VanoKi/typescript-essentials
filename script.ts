@@ -24,7 +24,7 @@ const addTask = (
 }
 
 const toggleTaskStatus = (tasks:TaskType[], id:number):TaskType[] => {
-  return tasks.map( el => el.id === id ? {...el, isDone: true} : el)
+  return tasks.map( el => el.id === id ? {...el, isDone: !el.isDone} : el)
 }
 
 log(toggleTaskStatus(tasks, 3))
