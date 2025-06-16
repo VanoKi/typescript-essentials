@@ -31,7 +31,9 @@ const removeTask = (tasks:TaskType[], id: number):TaskType[] => {
   return tasks.filter(task => task.id !== id)
 }
 
-
-log(removeTask(tasks, 3))
+const updateTitle = (tasks:TaskType[], id: number, newTitle: string):TaskType[] => {
+  return tasks.map(task => task.id === id ? {...task, title: newTitle} : task)
+}
+log(updateTitle(tasks, 3, 'React'))
 
 
