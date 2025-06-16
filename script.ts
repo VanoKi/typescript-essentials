@@ -2,26 +2,49 @@ import {log} from 'console'
 import * as repl from "node:repl";
 
 type TaskType = {
-  id: number;
-  title: string;
-  isDone: boolean;
-};
+  id: number
+  title: string
+  isDone: boolean
+}
 
-let tasks: TaskType[] = [
-  { id: 1, title: "HTML", isDone: true },
-  { id: 2, title: "CSS", isDone: false },
-  { id: 3, title: "JS", isDone: false }
-];
+type TodoListType = {
+  id: string
+  title: string
+  tasks: TaskType[]
+}
+
+const todoLists: TodoListType[] = [
+  {
+    id: "todolist-1",
+    title: "Frontend",
+    tasks: [
+      { id: 1, title: "HTML", isDone: true },
+      { id: 2, title: "CSS", isDone: false }
+    ]
+  },
+  {
+    id: "todolist-2",
+    title: "Backend",
+    tasks: [
+      { id: 1, title: "Node.js", isDone: false },
+      { id: 2, title: "MongoDB", isDone: false }
+    ]
+  }
+]
 
 const addTask = (
-  tasks: TaskType[],
-  title: string,
-  id: number
-): TaskType[] => {
+  todoLists: TodoListType[],
+  todoListId: string,
+  newTaskTitle: string,
+  newTaskId: number
+): TodoListType[] => {
   // ...
-  const newTask = {id, title, isDone: false}
-  return [newTask, ...tasks]
+  const newTitle =  { id: newTaskId, title: newTaskTitle, isDone: false }
+  return todoLists.map(tl => tl.id === todoListId ?
+    {newTitle, ...tl}
+    : tl)
 }
+log(addTask(todoLists, 'todolist-1', 'JS', 3))
 
 const toggleTaskStatus = (tasks:TaskType[], id:number):TaskType[] => {
   return tasks.map( el => el.id === id ? {...el, isDone: !el.isDone} : el)
@@ -34,6 +57,5 @@ const removeTask = (tasks:TaskType[], id: number):TaskType[] => {
 const updateTitle = (tasks:TaskType[], id: number, newTitle: string):TaskType[] => {
   return tasks.map(task => task.id === id ? {...task, title: newTitle} : task)
 }
-log(updateTitle(tasks, 3, 'React'))
 
 
