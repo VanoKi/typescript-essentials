@@ -9,7 +9,7 @@ const tasks = [
 type TaskType = typeof  tasks[0]
 
 const completeTask = (tasks: TaskType[], id: number): TaskType[] => {
-  return tasks.map(task => task.id === id ? {...task, status: {completed: true} } : task)}
+  return tasks.map(task => task.id === id ? {...task, status: {...task.status, completed: true} } : task)}
 
 log(completeTask(tasks, 1))
 
