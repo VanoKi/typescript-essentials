@@ -1,4 +1,5 @@
 import {log} from 'console'
+import * as repl from "node:repl";
 
 type TaskType = {
   id: number;
@@ -22,7 +23,10 @@ const addTask = (
   return [newTask, ...tasks]
 }
 
+const toggleTaskStatus = (tasks:TaskType[], id:number):TaskType[] => {
+  return tasks.map( el => el.id === id ? {...el, isDone: true} : el)
+}
 
-log(addTask(tasks, 'new', 4))
+log(toggleTaskStatus(tasks, 3))
 
 
