@@ -19,19 +19,22 @@ const tasks = [
   }
 ];
 
-type TaskType = typeof tasks[0]
 
-const removeSubtask = (
+type TaskType = typeof tasks[0]
+// type SunaTaskType = typeof tasks[0]
+
+const renameSubtask = (
   tasks: TaskType[],
   taskId: number,
-  subtaskId: number
+  subtaskId: number,
+  newTitle: string
 ): TaskType[] => {
+  // ...
   return tasks.map(task => task.id === taskId ?
-    {... task, subtasks: task.subtasks.filter(el => el.id !== subtaskId)} : task)
+    {...task, subtasks: task.subtasks.map(el => el.id === subtaskId ? {...el, title: newTitle} : el)}
+    : task)
 }
 
+log(renameSubtask(tasks, 1, 'fuck the nun'))
 
-// log(removeSubtask(tasks, 1, 201))
-let ans = removeSubtask(tasks, 1, 201)
-log(ans[0])
 
