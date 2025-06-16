@@ -1,40 +1,28 @@
 import {log} from 'console'
 
-const tasks = [
-  {
-    id: 1,
-    title: "Project",
-    subtasks: [
-      { id: 101, title: "Setup repo" },
-      { id: 102, title: "Write code" }
-    ]
-  },
-  {
-    id: 2,
-    title: "Lunch",
-    subtasks: [
-      { id: 201, title: "Buy food" },
-      { id: 202, title: "Eat" }
-    ]
-  }
+type TaskType = {
+  id: number;
+  title: string;
+  isDone: boolean;
+};
+
+let tasks: TaskType[] = [
+  { id: 1, title: "HTML", isDone: true },
+  { id: 2, title: "CSS", isDone: false },
+  { id: 3, title: "JS", isDone: false }
 ];
 
-
-type TaskType = typeof tasks[0]
-// type SunaTaskType = typeof tasks[0]
-
-const renameSubtask = (
+const addTask = (
   tasks: TaskType[],
-  taskId: number,
-  subtaskId: number,
-  newTitle: string
+  title: string,
+  id: number
 ): TaskType[] => {
   // ...
-  return tasks.map(task => task.id === taskId ?
-    {...task, subtasks: task.subtasks.map(el => el.id === subtaskId ? {...el, title: newTitle} : el)}
-    : task)
+  const newTask = {id, title, isDone: false}
+  return [newTask, ...tasks]
 }
 
-log(renameSubtask(tasks, 1, 202, 'fuck the nun'))
+
+log(addTask(tasks, 'new', 4))
 
 
