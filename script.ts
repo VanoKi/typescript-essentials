@@ -1,17 +1,16 @@
 import {log} from 'console'
 
-const profile = {
-  name: "Sasha",
-  settings: {
-    theme: "light",
-    notifications: true
-  }
-};
+const tasks = [
+  { id: 1, title: "Write code", status: { completed: false } },
+  { id: 2, title: "Eat", status: { completed: false } },
+  { id: 3, title: "Sleep", status: { completed: false } }
+];
 
-type profileType = typeof profile
+type TaskType = typeof  tasks[0]
 
-const updateTheme = (profile:profileType, theme:string):any => {
-  return {...profile, settings: {...profile.settings, theme: 'dark'}}
-}
+const completeTask = (tasks: TaskType[], id: number): TaskType[] => {
+  return tasks.map(task => task.id === id ? {...task, status: {completed: true} } : task)}
 
-log(updateTheme(profile, 'dark'))
+log(completeTask(tasks, 1))
+
+// log(tasks[0].status.completed = true)
