@@ -1,11 +1,17 @@
-let json = '{ "age": 30 }';
-try {
-    let user = JSON.parse(json)
-    if (!user.name) {
-        throw new SyntaxError('no name')
-    }
-    console.log(user.name)
-} catch (e) {
-    console.log(e.name)
-    console.log(e.message)
-}
+"use strict";
+const Sasha = {
+    firstName: 'Sasha',
+    age: 22
+};
+const Ivan = {
+    firstName: 'Ivan',
+    age: 65
+};
+const getOlderUser = (user1, user2) => {
+    if (user1.age > user2.age)
+        return user1;
+    if (user1.age < user2.age)
+        return user2;
+    return null;
+};
+console.log(getOlderUser(Sasha, Ivan));
