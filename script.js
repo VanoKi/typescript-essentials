@@ -1,17 +1,20 @@
-"use strict";
-const Sasha = {
-    firstName: 'Sasha',
-    age: 22
-};
-const Ivan = {
-    firstName: 'Ivan',
-    age: 65
-};
-const getOlderUser = (user1, user2) => {
-    if (user1.age > user2.age)
-        return user1;
-    if (user1.age < user2.age)
-        return user2;
-    return null;
-};
-console.log(getOlderUser(Sasha, Ivan));
+const car1 = {
+    brand: 'bmw',
+    maxSpeed: 200
+}
+
+function carCreator(brand, maxSpeed) { // fabric
+    return {
+        brand,
+        maxSpeed,
+        startEngine: function () {
+            console.log(`Engine is ${this.brand}`);
+        }
+    }
+}
+
+const car2 = carCreator('ford', 150)
+const car3 = carCreator('kia', 150)
+
+console.log(car3)
+car3.startEngine()
