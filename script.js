@@ -18,19 +18,35 @@
 //
 // console.log(car3)
 // car3.startEngine()
-function CarCreator(brand, maxSpeed) {
-    this.brand = brand
-    this.maxSpeed = maxSpeed
+// function CarCreator(brand, maxSpeed) {
+//     this.brand = brand
+//     this.maxSpeed = maxSpeed
+// }
+// CarCreator.prototype.start = function(){
+//     console.log(`start ${this.brand}`)
+// }
+// CarCreator.prototype.start = function(){
+//     console.log(`stop ${this.brand}`)
+// }
+// const car1 = new CarCreator('bwn', 100)
+// const car2 = new CarCreator('kia', 100)
+// const car3 = new CarCreator('ford', 100)
+//
+// console.log(car1)
+// console.log(car2)
+// console.log(car3)
+//
+// car2.start()
+class Car {
+    constructor(car, speed) {
+        this.car = car;
+        this.speed = speed;
+    }
+    start() {
+        console.log(`Starting ${this.car}`);
+    }
 }
-CarCreator.prototype.start = function(){
-    console.log(`start ${this.brand}`)
-}
-const car1 = new CarCreator('bwn', 100)
-const car2 = new CarCreator('kia', 100)
-const car3 = new CarCreator('ford', 100)
 
-console.log(car1)
-console.log(car2)
-console.log(car3)
-
-car2.start()
+car = new Car('bwm', 100);
+console.log(car)
+car.start()
