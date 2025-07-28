@@ -37,16 +37,55 @@
 // console.log(car3)
 //
 // car2.start()
+// class Car {
+//     constructor(car, speed) {
+//         this.car = car;
+//         this.speed = speed;
+//     }
+//     start() {
+//         console.log(`Starting ${this.car}`);
+//     }
+//     stop() {
+//         console.log(`Stop ${this.car}`)
+//     }
+// }
+//
+// car = new Car('bwm', 100);
+// console.log(car)
+// car.start()
+// car.stop()
+// car2 = new Car('ford', 100);
+// console.log(car)
+// car.start()
+// car.stop()
+//
+// console.log(car.stop() === car2.stop())
 class Car {
-    constructor(car, speed) {
-        this.car = car;
+    #brand
+    constructor(brand, speed) {
+        this.#brand = brand;
         this.speed = speed;
     }
     start() {
-        console.log(`Starting ${this.car}`);
+        console.log(`Starting ${this.#brand}`);
+    }
+    stop() {
+        console.log(`Stop ${this.#brand}`)
+    }
+    getBrand() {
+        return this.#brand;
+    }
+    setBrand(newBrand) {
+        if (newBrand.length < 3) {
+            console.log(`New Brand: ${newBrand} is less than 3`);
+            return
+        }
+        return this.#brand = newBrand;
     }
 }
 
-car = new Car('bwm', 100);
-console.log(car)
+const car = new Car('bmw', 150);
+console.log(car.getBrand())
+car.setBrand('au')
+console.log(car.getBrand())
 car.start()
