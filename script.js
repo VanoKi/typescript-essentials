@@ -72,20 +72,20 @@ class Car {
     stop() {
         console.log(`Stop ${this.#brand}`)
     }
-    getBrand() {
-        return this.#brand;
-    }
-    setBrand(newBrand) {
-        if (newBrand.length < 3) {
-            console.log(`New Brand: ${newBrand} is less than 3`);
-            return
-        }
-        return this.#brand = newBrand;
-    }
 }
 
 const car = new Car('bmw', 150);
-console.log(car.getBrand())
-car.setBrand('au')
-console.log(car.getBrand())
-car.start()
+console.log(car.start());
+class SuperCar extends Car {
+    constructor(brand, speed, fly) {
+        super(brand, speed)
+        this.fly = fly;
+    }
+    flying () {
+        console.log(`Flying ${this.brand}`);
+    }
+}
+
+const superBMW = new SuperCar('superbmw', 400, true );
+console.log(superBMW.fly);
+superBMW.flying()
