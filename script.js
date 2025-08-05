@@ -46,5 +46,9 @@ const car2 = new Car('bmw', 200)
 // console.log(foo3.__proto__ === Function.prototype)
 
 console.log(Car.prototype.__proto__ === Object.prototype)
-console.log(Car.__proto__ === Function.prototype)
+console.log(Car.__proto__ === Function.__proto__)
+console.log(Object.__proto__)
+
+console.log(Array.__proto__)
+console.log(Function.__proto__ === Function.prototype)
 
