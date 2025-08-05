@@ -1,18 +1,16 @@
-const car1 = {
-    brand: 'bmw',
-    maxSpeed: 200,
-    startEngine() {
-        console.log(`${this.brand} engine is started`)
-    },
+function createCar(brand, maxSpeed) {
+    const car = {
+        brand: brand,
+        maxSpeed: maxSpeed,
+        startEngine() {
+            console.log(`${this.brand} engine is started`)
+        },
+    }
+    return car
 }
 
-const car2 = {
-    brand: 'audi',
-    maxSpeed: 220,
-    startEngine() {
-        console.log(`${this.brand} engine is started`)
-    },
-}
+const bmw = createCar('bmw', 200)
+const kia = createCar('kia', 220)
 
-console.log(car1)
-console.log(car2)
+bmw.startEngine() // bmw engine is started
+kia.startEngine() // kia engine is started
