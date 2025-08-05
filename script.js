@@ -32,5 +32,19 @@ const car2 = new Car('bmw', 200)
 // const a = 5
 // console.log(a.__proto__ === Number.prototype)
 
-const obj = {}
-console.log(obj.__proto__ === Object.prototype)
+// const obj = {}
+// console.log(obj.__proto__ === Object.prototype)
+
+// const foo = () => {}
+// function foo2() {
+//
+// }
+// const foo3 = function () {}
+//
+// console.log(foo.__proto__ === Function.prototype)
+// console.log(foo2.__proto__ === Function.prototype)
+// console.log(foo3.__proto__ === Function.prototype)
+
+console.log(Car.prototype.__proto__ === Object.prototype)
+console.log(Car.__proto__ === Function.prototype)
+
