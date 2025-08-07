@@ -53,5 +53,21 @@ const car2 = new Car('bmw', 200)
 // console.log(Function.__proto__ === Function.prototype)
 // console.log(Function.__proto__.__proto__ === Object.prototype)
 //
-console.log(Car.__proto__.__proto__.__proto__)
+// console.log(Car.__proto__.__proto__.__proto__)
+//
+// console.log()
+
+function add(a, b, c) {
+    return a + b + c
+}
+
+function curriedAdd(a) {
+    return function (b) {
+        return function (c) {
+            return a + b + c
+        }
+    }
+}
+
+console.log(curriedAdd(5)(5))
 
