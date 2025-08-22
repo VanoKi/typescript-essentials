@@ -1,7 +1,7 @@
-function slice(str:string, start, end) {
-  let newStr = '';
+function slice(str:string, start:number, end?:number):string {
+  let newStr:string = '';
 
-  let lastIndex;
+  let lastIndex:number;
 
   if (end) {
     lastIndex = end > str.length ? str.length : end;
