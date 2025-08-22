@@ -69,5 +69,13 @@ function curriedAdd(a) {
     }
 }
 
-console.log(curriedAdd(5)(5))
+// console.log(curriedAdd(5)(5))
 
+
+function greet(greeting, name) {
+    return `${greeting} ${name}`
+}
+
+const sayHello = greet.bind(null, 'hello')
+
+console.log(sayHello('vani'))
